@@ -63,22 +63,22 @@ Folium 지도 생성을 통해 folium 라이브러리를 사용하여 평균 �
 
 # code
   #tkinter를 사용하기 위한 import
-  from tkinter import *
-  from tkinter import ttk
-  import pandas as pd
-  from folium.plugins import MiniMap
-  import folium
+    from tkinter import *
+    from tkinter import ttk
+    import pandas as pd
+    from folium.plugins import MiniMap
+    import folium
 
   #아이디, 패스워드 초기 배열 생성
-  ID = ['chocobi', 'frozen']
-  PW = ['imgroot', 'anna']
+    ID = ['chocobi', 'frozen']
+    PW = ['imgroot', 'anna']
 
   #tkinter 객체 생성
-  window = Tk()
+    window = Tk()
 
   #사용자 id와 password를 저장하는 변수 생성
-  user_id, password = StringVar(), StringVar()
-  sign_id, sign_pw = StringVar(), StringVar()
+    user_id, password = StringVar(), StringVar()
+    sign_id, sign_pw = StringVar(), StringVar()
 
   #사용자 id와 password를 비교하는 함수
   def check_data():
@@ -139,44 +139,44 @@ Folium 지도 생성을 통해 folium 라이브러리를 사용하여 평균 �
           window_error.geometry("250x150+700+400")
         
   #사용자가 입력한 id와 pw를 list에 추가하는 함수
-  def append_data():
-      def sign_up() :
-          id = sign_id.get()
-          pw = sign_pw.get()
-      
-          if 8 <= len(id) < 20 and 8 <= len(pw) < 20 and id not in ID :
-              ID.append(id)
-              PW.append(pw)
-              window_success = Tk()
-              window_success.title("Success")
-              ttk.Label(window_success, text = "successfully signed up").grid(row = 1, column = 1, padx = 10, pady = 10)
-              window_success.geometry("250x150+700+400")
-  
-          else:
-              window_error = Toplevel(window)
-              window_error.title("Error")
-              ttk.Label(window_error, text = '''# Is your ID or PW 8~20 letters # entered ID is already in ID list''').grid(row = 1, column = 1, padx = 10, pady = 10)
-              window_error.geometry("250x150+700+400")
-  
-      window_signup = Toplevel(window)
-      window_signup.title("Sign up")
-      window_signup.geometry("300x200+700+400")
+    def append_data():
+        def sign_up() :
+            id = sign_id.get()
+            pw = sign_pw.get()
+        
+            if 8 <= len(id) < 20 and 8 <= len(pw) < 20 and id not in ID :
+                ID.append(id)
+                PW.append(pw)
+                window_success = Tk()
+                window_success.title("Success")
+                ttk.Label(window_success, text = "successfully signed up").grid(row = 1, column = 1, padx = 10, pady = 10)
+                window_success.geometry("250x150+700+400")
+    
+            else:
+                window_error = Toplevel(window)
+                window_error.title("Error")
+                ttk.Label(window_error, text = '''# Is your ID or PW 8~20 letters # entered ID is already in ID list''').grid(row = 1, column = 1, padx = 10, pady = 10)
+                window_error.geometry("250x150+700+400")
+    
+        window_signup = Toplevel(window)
+        window_signup.title("Sign up")
+        window_signup.geometry("300x200+700+400")
 
       #회원가입 id와 password의 UI를 만드는 부분
-      ttk.Label(window_signup, text = "New ID : ").grid(row = 0, column = 0, padx = 10, pady = 10)
-      ttk.Label(window_signup, text = "New Password : ").grid(row = 1, column = 0, padx = 10, pady = 10)
-      ttk.Entry(window_signup, textvariable = sign_id).grid(row = 0, column = 1, padx = 10, pady = 10)
-      ttk.Entry(window_signup, textvariable = sign_pw).grid(row = 1, column = 1, padx = 10, pady = 10)
-      ttk.Button(window_signup, text = "Sign up", command = sign_up).grid(row = 2, column = 1, padx = 10, pady = 10)
+        ttk.Label(window_signup, text = "New ID : ").grid(row = 0, column = 0, padx = 10, pady = 10)
+        ttk.Label(window_signup, text = "New Password : ").grid(row = 1, column = 0, padx = 10, pady = 10)
+        ttk.Entry(window_signup, textvariable = sign_id).grid(row = 0, column = 1, padx = 10, pady = 10)
+        ttk.Entry(window_signup, textvariable = sign_pw).grid(row = 1, column = 1, padx = 10, pady = 10)
+        ttk.Button(window_signup, text = "Sign up", command = sign_up).grid(row = 2, column = 1, padx = 10, pady = 10)
 
     
     
   #id와 password, 그리고 확인 버튼의 UI를 만드는 부분
-  ttk.Label(window, text = "Identification : ").grid(row = 0, column = 0, padx = 10, pady = 10)
-  ttk.Label(window, text = "Password : ").grid(row = 1, column = 0, padx = 10, pady = 10)
-  ttk.Entry(window, textvariable = user_id).grid(row = 0, column = 1, padx = 10, pady = 10)
-  ttk.Entry(window, textvariable = password, show = '*').grid(row = 1, column = 1, padx = 10, pady = 10)
-  ttk.Button(window, text = "Login", command = check_data).grid(row = 2, column = 1, padx = 10, pady = 10)
-  ttk.Button(window, text = "Move to Sign up page", command = append_data).grid(row = 2, column = 0, padx = 10, pady = 10)
-  
-  window.mainloop()
+    ttk.Label(window, text = "Identification : ").grid(row = 0, column = 0, padx = 10, pady = 10)
+    ttk.Label(window, text = "Password : ").grid(row = 1, column = 0, padx = 10, pady = 10)
+    ttk.Entry(window, textvariable = user_id).grid(row = 0, column = 1, padx = 10, pady = 10)
+    ttk.Entry(window, textvariable = password, show = '*').grid(row = 1, column = 1, padx = 10, pady = 10)
+    ttk.Button(window, text = "Login", command = check_data).grid(row = 2, column = 1, padx = 10, pady = 10)
+    ttk.Button(window, text = "Move to Sign up page", command = append_data).grid(row = 2, column = 0, padx = 10, pady = 10)
+    
+    window.mainloop()
