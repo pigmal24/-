@@ -4,6 +4,7 @@
   - [📂프로젝트 소개](#-프로젝트-소개)
   - [🫶개발과정](#-개발과정)
   - [🖥️code](#-code)
+  - [ppt](#-ppt)
 
 # 팀 소개
 안녕하세요 저희는 코린이들이 모인
@@ -180,3 +181,6 @@ Folium 지도 생성을 통해 folium 라이브러리를 사용하여 평균 �
     ttk.Button(window, text = "Move to Sign up page", command = append_data).grid(row = 2, column = 0, padx = 10, pady = 10)
     
     window.mainloop()
+
+# ppt
+- https://www.notion.so/c3341aa5e0f64766a6ce71b26131a1c1?pvs=4
