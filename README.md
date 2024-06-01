@@ -62,25 +62,25 @@ Folium 지도 생성을 통해 folium 라이브러리를 사용하여 평균 �
 지도에서 시각화 정보를 제공합니다. 데이터 프레임을 순회하면서 각 병원과 약국/한약방의 위치에 CircleMarker를 추가하고, 색상을 구분하여 지도에 표시합 후 생성된 지도를 기본 웹 브라우저에서 열어줍니다.
 
 # code
-#tkinter를 사용하기 위한 import
+  #tkinter를 사용하기 위한 import
   from tkinter import *
   from tkinter import ttk
   import pandas as pd
   from folium.plugins import MiniMap
   import folium
 
-#아이디, 패스워드 초기 배열 생성
+  #아이디, 패스워드 초기 배열 생성
   ID = ['chocobi', 'frozen']
   PW = ['imgroot', 'anna']
 
-#tkinter 객체 생성
+  #tkinter 객체 생성
   window = Tk()
 
-#사용자 id와 password를 저장하는 변수 생성
+  #사용자 id와 password를 저장하는 변수 생성
   user_id, password = StringVar(), StringVar()
   sign_id, sign_pw = StringVar(), StringVar()
 
-#사용자 id와 password를 비교하는 함수
+  #사용자 id와 password를 비교하는 함수
   def check_data():
       id = user_id.get()
       pw = password.get()
@@ -138,7 +138,7 @@ Folium 지도 생성을 통해 folium 라이브러리를 사용하여 평균 �
           ttk.Label(window_error, text = "Check your Identification or Password").grid(row = 1, column = 1, padx = 10, pady = 10)
           window_error.geometry("250x150+700+400")
         
-#사용자가 입력한 id와 pw를 list에 추가하는 함수
+  #사용자가 입력한 id와 pw를 list에 추가하는 함수
   def append_data():
       def sign_up() :
           id = sign_id.get()
@@ -171,7 +171,7 @@ Folium 지도 생성을 통해 folium 라이브러리를 사용하여 평균 �
 
     
     
-#id와 password, 그리고 확인 버튼의 UI를 만드는 부분
+  #id와 password, 그리고 확인 버튼의 UI를 만드는 부분
   ttk.Label(window, text = "Identification : ").grid(row = 0, column = 0, padx = 10, pady = 10)
   ttk.Label(window, text = "Password : ").grid(row = 1, column = 0, padx = 10, pady = 10)
   ttk.Entry(window, textvariable = user_id).grid(row = 0, column = 1, padx = 10, pady = 10)
